@@ -1,8 +1,7 @@
 # Advanced_Linear_regression
  
 
-Project Overview - To Understand the significant variables in predicting the price of the house so that the US based company can enter in to the Australian market 
-based on this analysis
+Project Overview - To build a CNN based model which can accurately detect melanoma. Melanoma is a type of cancer that can be deadly if not detected early. It accounts for 75% of skin cancer deaths. A solution that can evaluate images and alert dermatologists about the presence of melanoma has the potential to reduce a lot of manual effort needed in diagnosis.
 
 ##Table of contents
 * [General Info](#general-information)
@@ -11,23 +10,54 @@ based on this analysis
 * [Technology](#Technology)
 
 ## General Information.
- - A US-based housing company has decided to enter the Australian market.The company uses data analytics to purchase houses at a price below their actual values 
-   and flip them on at a higher price. 
- - required to model the price of houses with the available independent variables. 
-   This model will then be used by the management to understand how exactly the prices vary with the variables.
+ - The dataset consists of 2357 images of malignant and benign oncological diseases, which were formed from the International Skin Imaging Collaboration (ISIC). All images were sorted according to the classification taken with ISIC, and all subsets were divided into the same number of images, with the exception of melanomas and moles, whose images are slightly dominant . To perform augumentation and build a model to predict the cancer images.
 
 ## Library used
  - Pandas
+ - Tensor Flow
+ - Keras
  - Seaborn
  - numpy
  - matplot
- - Sklearn
- - Lasso
- - Ridge
+ 
+
 
 ## Conclusions
- -Fitted the Model using Lasso and Ridge regression and fitted the data well
- - OverallQual, OverallCond,BsmtFullBath,GarageCars,MSZoning,RoofStyle,CentralAir,FullBath are the parameters which are important ones
+
+# Model 1 : 
+Observation :
+
+Train accuracy = 0.82
+
+Validation accuracy = 0.53
+
+val loss = 2.16
+
+loss = 0.49
+
+There is a significant difference between validation and train accuracy this shows model has overfitted
+
+We Need to choose right augumented strategy as the data has more class imbalance
+
+# Model 2 :
+
+loss: 1.09 accuracy: 0.59
+
+val_loss: 1.3182
+
+val_accuracy: 1.3
+
+Here we can see that there is not that much difference between Val loss and training loss. Loss values are close.
+
+It's not showing overfitting but accuracy is low. Need to improve accuracy. That's why we should generate more artificial data.
+
+# Model 3 :
+
+loss: 0.58 accuracy: 0.78 val_loss: 0.82 val_accuracy: 0.71 Now we got good accuracy for both Training and validation data.
+
+Now all the issues are resolved like overfitting and low accuracy.
+
+We can consider this as final model.
 
 ## Technology
  - library - version 3.0
